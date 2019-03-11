@@ -35,12 +35,16 @@ export default class App extends Component
 	render()
 	{
 		const data = this.state.data;
+
+		// if data hasn't loaded, display "Loading..."
 		if (data === null)
 		{
 			return(
 				<View><Text>Loading...</Text></View>
 			)
 		}
+
+		// else return the view
 		return(
 		<View style={styles.container}>
 			<View style={styles.bannerContainer}>
@@ -49,7 +53,12 @@ export default class App extends Component
 			<View style={styles.body}>
 				<FlatList
 					data = {data}
-					renderItem = {({item}) => <Text style={styles.textStyle}>{item.body}</Text>}
+					renderItem = {({item}) =>
+						<View style={styles.articleContainer}>
+							<Text style={styles.titleStyle}>{item.id}. {item.title}</Text>
+							<Text style={styles.textStyle}>{item.body}</Text>
+						</View>
+					}
 					keyExtractor={({id}, index) => id.toString()}
 					contentContainerStyle={{flexGrow: 1, justifyContent: 'center', alignSelf: "stretch"}}
 				/>
@@ -90,6 +99,20 @@ textStyle:
 {
 	color: "black",
 	fontSize: 15,
-	margin: 10,
+	marginBottom: 10,
+	marginLeft: 10
+},
+titleStyle:
+{
+	color: "black",
+	fontSize: 15,
+	fontWeight: "bold",
+	marginLeft: 10,
+	marginTop: 10
+},
+articleContainer:
+{
+	borderWidth: 1,
+	borderColor: "#FFC62F"
 }
 });
