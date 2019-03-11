@@ -13,7 +13,7 @@ export default class App extends Component
 
 	componentDidMount()
 	{
-		fetch("https://jsonplaceholder.typicode.com/users",
+		fetch("https://jsonplaceholder.typicode.com/posts",
 		{
 			method: 'GET',
 			headers: {
@@ -35,16 +35,23 @@ export default class App extends Component
 	render()
 	{
 		const data = this.state.data;
+		if (data === null)
+		{
+			return(
+				<View><Text>Loading...</Text></View>
+			)
+		}
 		return(
 		<View style={styles.container}>
-			<View style={styles.introContainer}>
-				<Text style={styles.introHeader}>LoSkol</Text>
+			<View style={styles.bannerContainer}>
+				<Text style={styles.bannerText}>LoSkol</Text>
 			</View>
 			<View style={styles.body}>
 				<FlatList
 					data = {data}
-					renderItem = {({item}) => <Text style={styles.textStyle}>{item.name}</Text>}
+					renderItem = {({item}) => <Text style={styles.textStyle}>{item.body}</Text>}
 					keyExtractor={({id}, index) => id.toString()}
+					contentContainerStyle={{flexGrow: 1, justifyContent: 'center', alignSelf: "stretch"}}
 				/>
 			</View>
 		</View>
@@ -56,29 +63,24 @@ const styles = StyleSheet.create({
 container:
 {
 	flex: 1,
-	justifyContent: 'center',
-	alignItems: 'center',
-	backgroundColor: '#F5FCFF',
 },
-introHeader:
+bannerText:
 {
 	color: "#fff",
-	fontSize: 80,
-	fontFamily: "NFL_Minnesota_Vikings"
+	fontSize: 60,
+	fontFamily: "NFL_Minnesota_Vikings",
+	textAlign: "center"
 },
-introContainer:
+bannerContainer:
 {
 	flex: 1,
 	backgroundColor: "#4F2683",
-	justifyContent: "center",
-	alignItems: "center",
-	alignSelf: "stretch",
 	borderBottomColor: "#FFC62F",
 	borderBottomWidth: 5
 },
 body:
 {
-	flex: 6,
+	flex: 9,
 	backgroundColor: "#fff",
 	justifyContent: "center",
 	alignItems: "center",
@@ -87,6 +89,7 @@ body:
 textStyle:
 {
 	color: "black",
-	fontSize: 20
+	fontSize: 15,
+	margin: 10,
 }
 });
