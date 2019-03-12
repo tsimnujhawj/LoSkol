@@ -23,8 +23,7 @@ class Welcome extends Component {
 	return (
 	  <View style={styles.container}>
 		<Text> HomeScreen </Text>
-		<Button title="Login" onPress={()=> this.props.navigation.navigate("Dashboard")} />
-		<Button title="Sign Up" onPress={()=> this.props.navigation.navigate("Dashboard")} />
+		<Button title="Enter" onPress={()=> this.props.navigation.navigate("Dashboard")} />
 	  </View>
 	)
   }
