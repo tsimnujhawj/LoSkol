@@ -22,7 +22,7 @@ class Welcome extends Component {
   render() {
 	return (
 	  <View style={styles.container}>
-		<Text> HomeScreen </Text>
+		<Text> Home </Text>
 		<Button title="Enter" onPress={()=> this.props.navigation.navigate("Dashboard")} />
 	  </View>
 	)
@@ -33,7 +33,7 @@ class Dashboard extends Component {
 	render() {
 	  return (
 		<View style={styles.container}>
-		  <Text> DashboardScreen </Text>
+		  <Text> Dashboard </Text>
 		</View>
 	  )
 	}
@@ -43,7 +43,7 @@ class Dashboard extends Component {
 	render() {
 	  return (
 		<View style={styles.container}>
-		  <Text> FeedScreen </Text>
+		  <Text> Feed </Text>
 		</View>
 	  )
 	}
@@ -53,7 +53,7 @@ class Dashboard extends Component {
 	render() {
 	  return (
 		<View style={styles.container}>
-		  <Text> ProfileScreen </Text>
+		  <Text> Profile </Text>
 		</View>
 	  )
 	}
@@ -63,7 +63,7 @@ class Dashboard extends Component {
 	render() {
 	  return (
 		<View style={styles.container}>
-		  <Text> SettingsScreen </Text>
+		  <Text> Settings </Text>
 		</View>
 	  )
 	}
