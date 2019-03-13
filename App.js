@@ -1,6 +1,12 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Button, FlatList} from 'react-native';
 
+import {
+	createStackNavigator,
+	createBottomTabNavigator,
+	createAppContainer,
+	} from 'react-navigation';
+
 export default class App extends Component
 {
 	constructor(props)
