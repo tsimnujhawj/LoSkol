@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View, Button, FlatList} from 'react-native';
 
+// navigation import
 import {
 	createStackNavigator,
 	createBottomTabNavigator,
