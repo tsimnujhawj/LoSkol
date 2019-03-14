@@ -8,6 +8,8 @@ import {
 	createAppContainer,
 	} from 'react-navigation';
 
+import MainNavigator from './src/navigation/MainNavigator'
+
 export default class App extends Component
 {
 	constructor(props)
@@ -70,6 +72,7 @@ export default class App extends Component
 					contentContainerStyle={{flexGrow: 1, justifyContent: 'center', alignSelf: "stretch"}}
 				/>
 			</View>
+			<MainNavigator />
 		</View>
 		);
 	}
@@ -92,7 +95,7 @@ bannerContainer:
 	flex: 1,
 	backgroundColor: "#4F2683",
 	borderBottomColor: "#FFC62F",
-	borderBottomWidth: 5
+	borderBottomWidth: 5,
 },
 body:
 {
