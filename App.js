@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 
 import styles from './src/assets/styles/Styles.js'
 import MainNavigator from './src/navigation/MainNavigator'
 import NewsFeed from './src/components/NewsFeed'
+import TwitterFeed from './src/components/TwitterFeed'
 import Banner from './src/components/Banner'
 
 export default class App extends Component

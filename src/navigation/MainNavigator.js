@@ -17,3 +17,18 @@ export default class MainNavigator extends Component {
     )
   }
 }
+
+// import React, { Component } from 'react'
+// import { Text, View } from 'react-native'
+
+// // navigation import
+// import {
+// 	createStackNavigator,
+// 	createBottomTabNavigator,
+// 	createAppContainer,
+// 	} from 'react-navigation';
+
+// const bottomTabNavigator = createBottomTabNavigator({
+//   NewsFeed: { screen: NewsFeed },
+//   TwitterFeed: { screen: TwitterFeed }
+// })
