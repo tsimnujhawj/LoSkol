@@ -10,14 +10,14 @@ export default StyleSheet.create({
         color: "#fff",
         fontSize: 60,
         fontFamily: "NFL_Minnesota_Vikings",
-        textAlign: "center"
+        textAlign: "center",
     },
     bannerContainer:
     {
-        flex: 1,
+        flex: .1,
         backgroundColor: "#4F2683",
         borderBottomColor: "#FFC62F",
-        borderBottomWidth: 5,
+        borderBottomWidth: 3,
     },
     body:
     {

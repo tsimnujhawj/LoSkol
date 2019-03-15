@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import NewsFeed from '../components/NewsFeed'
+import TwitterFeed from '../components/TwitterFeed'
+import Banner from '../components/Banner'
+import React, {Component} from 'react';
 
 // navigation import
 import {
@@ -8,27 +10,14 @@ import {
 	createAppContainer,
 	} from 'react-navigation';
 
-export default class MainNavigator extends Component {
-  render() {
-    return (
-      <View>
-        <Text> textInComponent </Text>
-      </View>
-    )
-  }
+const routeConfiguration = {
+	NewsFeed: { screen: NewsFeed },
+	TwitterFeed: { screen: TwitterFeed }
 }
 
-// import React, { Component } from 'react'
-// import { Text, View } from 'react-native'
+const navRoutes = createBottomTabNavigator(routeConfiguration);
 
-// // navigation import
-// import {
-// 	createStackNavigator,
-// 	createBottomTabNavigator,
-// 	createAppContainer,
-// 	} from 'react-navigation';
 
-// const bottomTabNavigator = createBottomTabNavigator({
-//   NewsFeed: { screen: NewsFeed },
-//   TwitterFeed: { screen: TwitterFeed }
-// })
+const AppContainer = createAppContainer(navRoutes);
+
+export default AppContainer;
