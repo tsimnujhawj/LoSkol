@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "6625730347",
+    "firebase_url": "https://loskol.firebaseio.com",
+    "project_id": "loskol",
+    "storage_bucket": "loskol.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6625730347:android:54ddbb93bbf6bd1b",
+        "android_client_info": {
+          "package_name": "com.loskol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6625730347-13u70vbdt1ufo7hb50knkmp9i6em35tr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd3DzRj5onmkk7alPwv9J-B49HjFeTLyI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
