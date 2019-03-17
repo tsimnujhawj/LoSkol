@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {View, Text} from 'react-native';
 import firebase from 'react-native-firebase'
 
-import Login from './src/components/Login'
+import LoginForm from './src/components/Login'
 
 import styles from './src/assets/styles/Styles'
 
@@ -18,42 +18,49 @@ export default class App extends Component
 	// 	)
 	// }
 
-	constructor() {
+	constructor()
+	{
 		super();
 		this.unsubscriber = null;
 		this.state = {
-		  user: null,
+			user: null,
 		};
-	  }
+	}
 	
-	  /**
-	   * Listen for any auth state changes and update component state
-	   */
-	  componentDidMount() {
+	// listen for any user changes (logged in/logged out)
+	componentDidMount()
+	{
 		this.unsubscriber = firebase.auth().onAuthStateChanged((user) => {
-		  this.setState({ user });
+			this.setState({ user });
 		});
-	  }
+	}
 	
-	  componentWillUnmount() {
-		if (this.unsubscriber) {
-		  this.unsubscriber();
+	// if user logs out, remove them from persistance
+	componentWillUnmount()
+	{
+		if (this.unsubscriber)
+		{
+			this.unsubscriber();
 		}
-	  }
+	}
 	
-	  render() {
-		if (!this.state.user) {
-		  return(
-			<View style={styles.body}>
-				<Login/>
-			</View>
-		  )
+	render()
+	{
+		// if no user is logged in, send to loginform
+		if (!this.state.user)
+		{
+			return(
+				<View style={styles.body}>
+					<LoginForm/>
+				</View>
+			)
 		}
 	
+		//if user is logged in, send to main page
 		return (
-		  <View>
-			<Text>Welcome to my awesome app {this.state.user.email}!</Text>
-		  </View>
+			<View>
+				<Text>Welcome to my awesome app {this.state.user.email}!</Text>
+			</View>
 		);
-	  }
+	}
 }

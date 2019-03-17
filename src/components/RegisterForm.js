@@ -4,28 +4,31 @@ import { Input, Button } from 'react-native-elements';
 
 import firebase from 'react-native-firebase'
 
-export default class LoginForm extends Component {
+export default class RegisterForm extends Component {
 
     constructor(props)
     {
 		super(props);
 		this.state = {
-            email: "",
-            password: ""
+
 		};
-		this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
+		this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this);
     }
 
-    handleLoginSubmit = () =>
+    handleRegisterSubmit = () =>
     {
         const { email, password } = this.state;
-        firebase.auth().signInWithEmailAndPassword(email, password)
+        firebase.auth().createUserWithEmailAndPassword(email, password)
             .then((user) => {
-            // user is logged in
+            // If you need to do anything with the user, do it here
+            // The user will be logged in automatically by the
+            // `onAuthStateChanged` listener we set up in App.js earlier
             })
             .catch((error) => {
             const { code, message } = error;
-            // error
+            // For details of error codes, see the docs
+            // The message contains the default Firebase string
+            // representation of the error
             });
     }
     
@@ -33,8 +36,7 @@ export default class LoginForm extends Component {
     {
       return (
             <View>
-                <Text>{this.state.email}{this.state.password}</Text>
-                <Text style={{textAlign: "center", fontSize: 50, margin: 20}}>Login</Text>
+                <Text style={{textAlign: "center", fontSize: 50, margin: 20}}>Create An Account</Text>
                 <Input
                 placeholder='Email'
                 leftIcon={{ type: 'font-awesome', name: 'envelope', color: "#F45B69" }}
@@ -48,18 +50,18 @@ export default class LoginForm extends Component {
                 value={this.state.password}
                 />
                     <Button
-                        title="Login"
+                        title="Register"
                         containerStyle={{alignSelf: "flex-end", margin: 15}}
-                        onPress={this.handleLoginSubmit}
+                        onPress={this.handleRegisterSubmit}
                         buttonStyle={{
                             backgroundColor: "#59C3C3",
                             width: 80
                         }}
                     />
                     <Button
-                        title="Create An Account"
+                        title="Login Instead"
                         containerStyle={{alignSelf: "center", margin: 30}}
-                        onPress={() => this.props.navigation.navigate("RegisterForm")}
+                        onPress={() => this.props.navigation.navigate("LoginForm")}
                         buttonStyle={{
                             backgroundColor: "#59C3C3"
                         }}
