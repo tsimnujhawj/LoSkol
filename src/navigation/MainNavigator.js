@@ -1,20 +1,19 @@
 import NewsFeed from '../components/NewsFeed'
 import TwitterFeed from '../components/TwitterFeed'
 import Profile from '../components/Profile'
-import Banner from '../components/Banner'
-import React, {Component} from 'react';
+import Settings from '../components/Settings'
 
 // navigation import
 import {
-	createStackNavigator,
 	createBottomTabNavigator,
 	createAppContainer,
-	} from 'react-navigation';
+} from 'react-navigation';
 
 const routeConfiguration = {
 	NewsFeed: { screen: NewsFeed },
-  TwitterFeed: { screen: TwitterFeed },
-  Profile: { screen: Profile }
+	TwitterFeed: { screen: TwitterFeed },
+	Profile: { screen: Profile },
+	Settings: { screen: Settings }
 }
 
 const navRoutes = createBottomTabNavigator(routeConfiguration);

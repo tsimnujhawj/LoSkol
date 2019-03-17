@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, Alert } from 'react-native'
 import { Input, Button } from 'react-native-elements';
 
 import firebase from 'react-native-firebase'
 
 export default class LoginForm extends Component {
+    static navigationOptions = {
+        title: 'Login',
+    };
 
     constructor(props)
     {
@@ -31,9 +34,9 @@ export default class LoginForm extends Component {
     
     render()
     {
-      return (
+        const {navigate} = this.props.navigation;
+        return (
             <View>
-                <Text>{this.state.email}{this.state.password}</Text>
                 <Text style={{textAlign: "center", fontSize: 50, margin: 20}}>Login</Text>
                 <Input
                 placeholder='Email'
@@ -59,12 +62,12 @@ export default class LoginForm extends Component {
                     <Button
                         title="Create An Account"
                         containerStyle={{alignSelf: "center", margin: 30}}
-                        onPress={() => this.props.navigation.navigate("RegisterForm")}
+                        onPress={() => navigate("Register")}
                         buttonStyle={{
                             backgroundColor: "#59C3C3"
                         }}
                     />
-          </View>
-      )
+            </View>
+        )
     }
   }

@@ -5,6 +5,9 @@ import { Input, Button } from 'react-native-elements';
 import firebase from 'react-native-firebase'
 
 export default class RegisterForm extends Component {
+    static navigationOptions = {
+        title: 'Register',
+    };
 
     constructor(props)
     {
@@ -26,6 +29,7 @@ export default class RegisterForm extends Component {
             .catch((error) => {
             const { code, message } = error;
             // error in creating user
+            <Text>Invalid email/password</Text>
             });
     }
     
@@ -58,7 +62,7 @@ export default class RegisterForm extends Component {
                     <Button
                         title="Login Instead"
                         containerStyle={{alignSelf: "center", margin: 30}}
-                        onPress={() => this.props.navigation.navigate("LoginForm")}
+                        onPress={() => this.props.navigation.navigate("Login")}
                         buttonStyle={{
                             backgroundColor: "#59C3C3"
                         }}
