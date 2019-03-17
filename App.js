@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import firebase from 'react-native-firebase'
 
-import LoginForm from './src/components/Login'
 import MainNavigator from './src/navigation/MainNavigator'
 import LoginNavigator from './src/navigation/LoginNavigator'
 

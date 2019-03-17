@@ -3,7 +3,7 @@ import {Text, View, FlatList} from 'react-native';
 
 import styles from '../assets/styles/Styles'
 
-export default class NewsFeed extends Component
+export default class Feed extends Component
 {
 	constructor(props)
 	{

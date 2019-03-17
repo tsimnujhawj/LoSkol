@@ -1,5 +1,5 @@
-import NewsFeed from '../components/NewsFeed'
-import TwitterFeed from '../components/TwitterFeed'
+import Feed from '../components/Feed'
+import Post from '../components/Post'
 import Profile from '../components/Profile'
 import Settings from '../components/Settings'
 
@@ -10,8 +10,8 @@ import {
 } from 'react-navigation';
 
 const routeConfiguration = {
-	NewsFeed: { screen: NewsFeed },
-	TwitterFeed: { screen: TwitterFeed },
+	Feed: { screen: Feed },
+	Post: { screen: Post },
 	Profile: { screen: Profile },
 	Settings: { screen: Settings }
 }

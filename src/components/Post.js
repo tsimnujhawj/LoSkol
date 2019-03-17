@@ -3,7 +3,7 @@ import { Text, View } from 'react-native'
 import firebase from 'react-native-firebase'
 import { Input, Button } from 'react-native-elements'
 
-export default class TwitterFeed extends React.Component {
+export default class Post extends React.Component {
 
     constructor(props)
     {
