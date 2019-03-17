@@ -1,23 +1,14 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import React, { Component } from 'react';
+import { View } from 'react-native';
 import firebase from 'react-native-firebase'
 
 import LoginForm from './src/components/Login'
+import MainNavigator from './src/navigation/MainNavigator'
 
 import styles from './src/assets/styles/Styles'
 
 export default class App extends Component
 {
-	// render()
-	// {
-	// 	return(
-	// 		<View style={styles.container}>
-	// 			<Banner />
-	// 			<MainNavigator />
-	// 		</View>
-	// 	)
-	// }
-
 	constructor()
 	{
 		super();
@@ -58,9 +49,7 @@ export default class App extends Component
 	
 		//if user is logged in, send to main page
 		return (
-			<View>
-				<Text>Welcome to my awesome app {this.state.user.email}!</Text>
-			</View>
+			<MainNavigator />
 		);
 	}
 }

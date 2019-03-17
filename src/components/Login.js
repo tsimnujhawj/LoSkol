@@ -9,12 +9,10 @@ export default class Login extends Component {
 
     return (
 		<View>
-			{/* TODO: add a background image */}
 			<LoginForm />
-
 		</View>
     )
   }
 }
 
-// deprecate this component
+// TODO: deprecate this component
