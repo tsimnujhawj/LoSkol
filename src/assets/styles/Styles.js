@@ -21,11 +21,9 @@ export default StyleSheet.create({
     },
     body:
     {
-        flex: 9,
-        backgroundColor: "#fff",
+        flex: 1,
+        backgroundColor: "#F2F4F3",
         justifyContent: "center",
-        alignItems: "center",
-        alignSelf: "stretch",
     },
     textStyle:
     {
@@ -46,5 +44,9 @@ export default StyleSheet.create({
     {
         borderWidth: 1,
         borderColor: "#FFC62F"
-    }
+    },
+    loginButton:
+    {
+        width: "50%",
+    },
     });
