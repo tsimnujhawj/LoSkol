@@ -22,11 +22,12 @@ export default class Feed extends Component {
 		firebase.database().ref("posts/").on("value", (snapshot)=>{
 			snapshot.forEach((item)=>{
 				item.forEach((individualPost)=> {
+					const item = individualPost.val();
 					this.setState({
-						post: [...this.state.posts, individualPost._value.content],
+						posts: [...this.state.posts, item],
 						isLoaded: true
 					})
-					console.log(this.state.post[0])
+					// console.log(this.state.posts[0].content) grab post content
 				})
 			})
 		})
@@ -50,17 +51,22 @@ export default class Feed extends Component {
 		}
 		else
 		{
+			// TODO: render each object, need a unique key id
 			const posts = this.state.posts;
+			console.log(posts)
 			return (
-				<FlatList
-				posts = {posts}
-				renderItem = {({item}) =>
-					<View>
-						<Text>{item}</Text>
-					</View>
-				}
-				keyExtractor={({id}, index) => id.toString()}
-			/>
+				<View>
+					<FlatList
+					posts = {posts}
+					renderItem = {({item}) =>
+						<View>
+							<Text>{item}</Text>
+						</View>
+					}
+					keyExtractor={(item, index) => item.key}
+					contentContainerStyle={{flexGrow: 1, justifyContent: 'center', alignSelf: "stretch", borderColor: "red"}}
+					/>
+				</View>
 			)
 		}
 	}
