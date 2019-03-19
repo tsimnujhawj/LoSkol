@@ -51,7 +51,7 @@ export default class Feed extends Component {
 		}
 		else
 		{
-			// TODO: render each object, need a unique key id
+			// TODO: render each object, need a unique key id, should implement via firebase
 			const posts = this.state.posts;
 			console.log(posts)
 			return (
