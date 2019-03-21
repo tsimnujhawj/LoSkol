@@ -56,6 +56,7 @@ export default class Feed extends Component {
 			console.log(posts)
 			return (
 				<View>
+					{/* TODO: flatlist wont render... */}
 					<FlatList
 					posts = {posts}
 					renderItem = {({item}) =>
