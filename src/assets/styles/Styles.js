@@ -1,5 +1,7 @@
 import {StyleSheet} from 'react-native'
 
+// TODO: refactor stylesheet
+
 export default StyleSheet.create({
     container:
     {
