@@ -14,6 +14,7 @@ export default class Post extends React.Component {
         this.handleContentSubmit = this.handleContentSubmit.bind(this);
     }
 
+    // TODO: need to add unique ID at each post
     handleContentSubmit = () => {
         const User = firebase.auth().currentUser;
         const {content} = this.state;
