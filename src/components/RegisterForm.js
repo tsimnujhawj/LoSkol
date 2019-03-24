@@ -19,6 +19,7 @@ export default class RegisterForm extends Component {
 		this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this);
     }
 
+    // TODO: generate a captcha to prevent bots
     handleRegisterSubmit = () =>
     {
         const { email, password } = this.state;
