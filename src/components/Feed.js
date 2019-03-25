@@ -19,10 +19,6 @@ export default class Feed extends Component {
 	}
 
 	renderFeedFromFirebase = () => {
-		this.state = {
-			posts: [],
-			isLoaded: false
-		}
 		firebase.database().ref("posts/").on("value", (snapshot)=>{
 			snapshot.forEach((item)=>{
 				item.forEach((individualPost)=> {
@@ -68,7 +64,7 @@ export default class Feed extends Component {
 					{/* TODO: flatlist wont render... */}
 					<FlatList
 					data = {posts}
-					extraData = {posts.key}
+					extraData = {posts}
 					renderItem = {({item}) =>
 						<View style={{borderColor: "red", borderWidth: 1, margin: 5}}>
 							<Text>{item.content}</Text>
