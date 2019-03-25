@@ -19,15 +19,24 @@ export default class Feed extends Component {
 	}
 
 	renderFeedFromFirebase = () => {
+		this.state = {
+			posts: [],
+			isLoaded: false
+		}
 		firebase.database().ref("posts/").on("value", (snapshot)=>{
 			snapshot.forEach((item)=>{
 				item.forEach((individualPost)=> {
-					const item = individualPost.val();
+					let item = individualPost;
+					let itemObject = {
+						key: item.key,
+						content: item.val().content,
+						user: item.val().user,
+						date: item.val().timeStamp,
+					}
 					this.setState({
-						posts: [...this.state.posts, item],
-						isLoaded: true
+						isLoaded: true,
+						posts: [...this.state.posts, itemObject]
 					})
-					// console.log(this.state.posts[0].content) grab post content
 				})
 			})
 		})
@@ -52,19 +61,21 @@ export default class Feed extends Component {
 		else
 		{
 			// TODO: render each object, need a unique key id, should implement via firebase
-			const posts = this.state.posts;
+			let posts = this.state.posts;
 			console.log(posts)
 			return (
 				<View>
 					{/* TODO: flatlist wont render... */}
 					<FlatList
 					data = {posts}
+					extraData = {posts.key}
 					renderItem = {({item}) =>
 						<View style={{borderColor: "red", borderWidth: 1, margin: 5}}>
 							<Text>{item.content}</Text>
 						</View>
 					}
 					contentContainerStyle={{flexGrow: 1, justifyContent: 'center', alignSelf: "stretch", borderColor: "red"}}
+					keyExtractor={(item) => item.key}
 					/>
 				</View>
 			)
