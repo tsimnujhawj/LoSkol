@@ -58,13 +58,12 @@ export default class Feed extends Component {
 				<View>
 					{/* TODO: flatlist wont render... */}
 					<FlatList
-					posts = {posts}
+					data = {posts}
 					renderItem = {({item}) =>
-						<View>
-							<Text>{item}</Text>
+						<View style={{borderColor: "red", borderWidth: 1, margin: 5}}>
+							<Text>{item.content}</Text>
 						</View>
 					}
-					keyExtractor={(item, index) => item.key}
 					contentContainerStyle={{flexGrow: 1, justifyContent: 'center', alignSelf: "stretch", borderColor: "red"}}
 					/>
 				</View>
