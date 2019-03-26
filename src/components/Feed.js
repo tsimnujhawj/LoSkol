@@ -61,7 +61,6 @@ export default class Feed extends Component {
 			console.log(posts)
 			return (
 				<View>
-					{/* TODO: flatlist wont render... */}
 					<FlatList
 					data = {posts}
 					extraData = {posts}
@@ -71,7 +70,7 @@ export default class Feed extends Component {
 						</View>
 					}
 					contentContainerStyle={{flexGrow: 1, justifyContent: 'center', alignSelf: "stretch", borderColor: "red"}}
-					keyExtractor={(item) => item.key}
+					keyExtractor={(item) => item.key} // TODO: key extractor
 					/>
 				</View>
 			)
