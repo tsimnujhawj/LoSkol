@@ -42,6 +42,8 @@ export default class Feed extends Component {
 		this.renderFeedFromFirebase();
 	}
 
+	// componentWillUpdate()
+
 	render()
 	{
 		if (!this.state.isLoaded)
