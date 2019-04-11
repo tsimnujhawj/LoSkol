@@ -19,6 +19,7 @@ export default class Post extends React.Component {
         const User = firebase.auth().currentUser;
         const {content} = this.state;
         const timestamp = Number(new Date())
+        // TODO: manage timestamp differently...
         firebase.database().ref(`posts/${User.uid}`).push({
             content: content,
             user: User.uid,
