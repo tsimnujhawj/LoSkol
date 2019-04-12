@@ -58,7 +58,8 @@ export default class Feed extends Component {
 		}
 		else
 		{
-			// TODO: render each object, need a unique key id, should implement via firebase
+            // TODO: render each object, need a unique key id, should implement via firebase
+            // TODO: re-render page when post is posted, handle in post.js?... pass from post.js as prop...
 			let posts = this.state.posts;
 			console.log(posts)
 			return (
