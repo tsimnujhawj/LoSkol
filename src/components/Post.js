@@ -25,10 +25,8 @@ export default class Post extends React.Component {
             user: User.uid,
             timeStamp: new Date(timestamp)
         }).then((data)=>{
-            // success on writing to database
             console.log(data)
         }).catch((error)=> {
-            // error callback
             console.log(error)
         });
     }
